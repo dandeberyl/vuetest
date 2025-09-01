@@ -1,4 +1,3 @@
-// Vue Instance (Template Syntax)
 new Vue({
   el: '#app',
   data: {
@@ -6,7 +5,6 @@ new Vue({
   }
 });
 
-// Class & Style Bindings
 new Vue({
   el: '#app-class',
   data: {
@@ -21,13 +19,11 @@ new Vue({
   }
 });
 
-// Conditional Rendering
 new Vue({
   el: '#app-conditional',
   data: { seen: true }
 });
 
-// List Rendering
 new Vue({
   el: '#app-list',
   data: {
@@ -35,7 +31,6 @@ new Vue({
   }
 });
 
-// Event Handling
 new Vue({
   el: '#app-event',
   data: { count: 0 },
@@ -46,7 +41,6 @@ new Vue({
   }
 });
 
-// Form Input Bindings
 new Vue({
   el: '#app-form',
   data: {
