@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Basics</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h2 {
+            color: darkgreen;
+        }
+
+        .active {
+            font-weight: bold;
+            color: red;
+        }
+
+        .button {
+            background: #42b983;
+            color: white;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background: #2c9e6f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <h2>{{ message }}</h2>
+    </div>
+
+    <div id="app-class" class="active">
+        <p v-bind:class="{ active: isActive }">Toggle Class</p>
+        <p v-bind:style="{ color: textColor, fontSize: size + 'px' }">Styled text</p>
+        <button class="button" @click="toggle">Toggle Active</button>
+    </div>
+
+    <div id="app-conditional">
+        <p v-if="seen">Now you see me!</p>
+        <p v-else>Now you don’t!</p>
+        <button @click="seen = !seen">Toggle</button>
+    </div>
+
+    <div id="app-list">
+        <ul>
+            <li v-for="(todo, index) in todos" :key="index">
+                {{ index + 1 }}. {{ todo }}
+            </li>
+        </ul>
+    </div>
+
+    <div id="app-event">
+        <p>{{ count }}</p>
+        <button @click="count++">Increment</button>
+        <button @click="reset">Reset</button>
+    </div>
+
+    <div id="app-form">
+        <input v-model="name" placeholder="Enter your name">
+        <p>Hello, {{ name }}</p>
+
+        <input type="checkbox" v-model="isChecked"> Agree?
+        <p>Checked: {{ isChecked }}</p>
+
+        <select v-model="selected">
+            <option disabled value="">Please select</option>
+            <option>Vue</option>
+            <option>React</option>
+            <option>Angular</option>
+        </select>
+        <p>Selected: {{ selected }}</p>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
